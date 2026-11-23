@@ -1,0 +1,52 @@
+/* La marca de este cliente. La escribe herramientas/montar.py desde sitio.toml [marca]:
+   no se toca a mano (se pisaría al volver a montar). */
+:root{
+  --tinta:               #1B1E26;
+  --oscuro:              #111B2E;
+  --acento:              #1E3157;
+  --acento-osc:          #1D2C4B;
+  --acento-clar:         #D6B072;
+  --claro:               #F4F0E8;
+  --tinta-70:            #4D5056;
+  --tinta-50:            #696A70;
+  --linea:               #DEDBD5;
+  --linea-osc:           #232C3E;
+  --oscuro-2:            #1C2537;
+  --sobre-oscuro:        #C8CBCF;
+  --sobre-oscuro-fuerte: #E0E1E4;
+  --sobre-oscuro-suave:  #A9ADB4;
+  --sobre-oscuro-tenue:  #8A8F99;
+  --letra:               "EB Garamond";
+  --radio:               2px;
+  --logo-alto:           50px;
+  --logo-pie-alto:       120px;
+}
+@media (max-width:1100px){
+  :root{ --logo-alto:44px; }
+}
+/* escala 1.05 */
+html{ font-size:105%; }
+body{ font-size:18.90px; }
+/* titulares finos */
+h1,h2,.lista-n.grande .ln-titulo,.cifra strong,.revela .rv-linea,.llamada h2{ font-weight:500; letter-spacing:-.012em; }
+.ilumina-frase b,.ilumina-frase strong{ font-weight:600; }
+/* titulares contenidos */
+h1{ font-size:clamp(2.05rem, 4.2vw, 3.45rem); line-height:1.08; }
+h2{ font-size:clamp(1.65rem, 3vw, 2.55rem); line-height:1.12; }
+h2.menor{ font-size:clamp(1.35rem, 2.3vw, 1.85rem); }
+@media (min-width:940px){ .portada-lado.foto-vertical h1{ font-size:clamp(2.05rem, 4.2vw, 3.45rem); } }
+.llamada h2,.antepie h2{ font-size:clamp(1.85rem, 3.6vw, 3rem); }
+.sg-nombre{ font-size:clamp(1.5rem, 2.8vw, 2.3rem); }
+.rv-frase{ font-size:clamp(1.8rem, 4vw, 3.3rem); line-height:1.1; }
+.ilumina-frase{ font-size:clamp(1.65rem, 3.3vw, 2.85rem); line-height:1.2; }
+.lista-n.grande .ln-titulo{ font-size:clamp(1.6rem, 3.4vw, 2.9rem); }
+.cifra strong{ font-size:clamp(2rem, 3.6vw, 2.9rem); }
+.cifras.grande .cifra strong{ font-size:clamp(2.3rem, 4.4vw, 3.6rem); }
+
+/* [estilo] transicion = true */
+@view-transition{ navigation:auto; }
+::view-transition-old(root){ animation:.35s var(--salida) both vt-sale; }
+::view-transition-new(root){ animation:.35s var(--salida) both vt-entra; }
+@keyframes vt-sale{ to{ opacity:0; transform:scale(.985); } }
+@keyframes vt-entra{ from{ opacity:0; transform:translateY(24px); } }
+@media (prefers-reduced-motion:reduce){ ::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){ animation:none !important; } }
